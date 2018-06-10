@@ -8,7 +8,13 @@ namespace Lab1
         {
             // String inputs from user for the dates
             string entryOne, entryTwo;
+            
 
+            DateTime dateOne, dateTwo;
+            dateOne = new DateTime(1990, 11, 23);
+            dateTwo = new DateTime(1990,11,22);
+
+            /*
             // This is the beginning where people enter in the dates to find the difference
             Console.WriteLine("Write dates in yyyy/mm/dd format.");
             Console.WriteLine("");
@@ -16,24 +22,30 @@ namespace Lab1
 
             //This converts what the user inputs into the DateTime
             entryOne = Console.ReadLine();
-            DateTime dateOne = DateTime.Parse(entryOne);
+            dateOne = DateTime.Parse(entryOne);
 
 
             Console.WriteLine("Please enter date two.");
             entryTwo = Console.ReadLine();
-            DateTime dateTwo = DateTime.Parse(entryTwo);
+            dateTwo = DateTime.Parse(entryTwo);
+            */
 
-            Console.WriteLine(dateOne);
-            Console.WriteLine(dateTwo);
+            Console.WriteLine("The first date is {0} ", dateOne);
+            Console.WriteLine("The second date is {0} ", dateTwo);
 
             // What I have is starting date and the ending date. 
             // I need the time span between the two dates
-
+            var timeDifference = dateTwo - dateOne;
+            Console.WriteLine(timeDifference);
 
             //-----------------------------------------
 
             // 
             // What I need is the hours, minutes, seconds between the two dates
+            Console.WriteLine(timeDifference.TotalDays);
+            Console.WriteLine(timeDifference.TotalHours);
+            Console.WriteLine(timeDifference.TotalMinutes);
+
 
 
         }
