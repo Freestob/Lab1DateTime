@@ -36,15 +36,16 @@ namespace Lab1
             // What I have is starting date and the ending date. 
             // I need the time span between the two dates
             var timeDifference = dateTwo - dateOne;
-            Console.WriteLine(timeDifference);
-
+            
+                
             //-----------------------------------------
 
             // 
             // What I need is the hours, minutes, seconds between the two dates
-            Console.WriteLine(timeDifference.TotalDays);
-            Console.WriteLine(timeDifference.TotalHours);
-            Console.WriteLine(timeDifference.TotalMinutes);
+            
+            Console.WriteLine(Math.Abs(timeDifference.TotalHours));
+            Console.WriteLine(Math.Abs(timeDifference.TotalMinutes));
+            Console.WriteLine(Math.Abs(timeDifference.TotalSeconds));
 
 
 
