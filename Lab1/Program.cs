@@ -11,10 +11,13 @@ namespace Lab1
 
 
             DateTime dateOne, dateTwo;
+            /*
 #if DEBUG
             dateOne = new DateTime(1990, 11, 23);
             dateTwo = new DateTime(1990, 11, 22);
 #else
+*/
+            /*
 
             // This is the beginning where people enter in the dates to find the difference
             Console.WriteLine("Write dates in yyyy/mm/dd format.");
@@ -29,8 +32,12 @@ namespace Lab1
             Console.WriteLine("Please enter date two.");
             entryTwo = Console.ReadLine();
             dateTwo = DateTime.Parse(entryTwo);
+            */
 
-#endif
+            dateOne = GetDateInput();
+            dateTwo = GetDateInput();
+
+//#endif
 
 
             Console.WriteLine("The first date is {0} ", dateOne);
@@ -46,9 +53,30 @@ namespace Lab1
             // 
             // What I need is the hours, minutes, seconds between the two dates
 
-            Console.WriteLine(Math.Abs(timeDifference.TotalHours));
-            Console.WriteLine(Math.Abs(timeDifference.TotalMinutes));
-            Console.WriteLine(Math.Abs(timeDifference.TotalSeconds));
+            Console.WriteLine("The total hours between the dates are " + Math.Abs(timeDifference.TotalHours));
+            Console.WriteLine("The total minutes between the dates are " + Math.Abs(timeDifference.TotalMinutes));
+            Console.WriteLine("The total seconds between the dates are " + Math.Abs(timeDifference.TotalSeconds));
+
+        }
+
+        static DateTime GetDateInput()
+        {
+            string userInput;
+            DateTime entryDate;
+
+            Console.WriteLine("Please enter a date.");
+            userInput = Console.ReadLine();
+            bool success = DateTime.TryParse(userInput, out entryDate);
+
+            if(success ==true)
+            {
+                return entryDate;
+            }
+            else
+            {
+                Console.WriteLine("Hey, write a valid date.");
+                return GetDateInput();
+            }
 
 
 
