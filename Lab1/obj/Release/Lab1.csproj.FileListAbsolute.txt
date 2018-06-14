@@ -1,0 +1,7 @@
+C:\Users\frees\source\repos\Lab1\Lab1\bin\Release\Lab1.exe.config
+C:\Users\frees\source\repos\Lab1\Lab1\bin\Release\Lab1.exe
+C:\Users\frees\source\repos\Lab1\Lab1\bin\Release\Lab1.pdb
+C:\Users\frees\source\repos\Lab1\Lab1\obj\Release\Lab1.csprojAssemblyReference.cache
+C:\Users\frees\source\repos\Lab1\Lab1\obj\Release\Lab1.csproj.CoreCompileInputs.cache
+C:\Users\frees\source\repos\Lab1\Lab1\obj\Release\Lab1.exe
+C:\Users\frees\source\repos\Lab1\Lab1\obj\Release\Lab1.pdb
