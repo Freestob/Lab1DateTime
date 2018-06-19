@@ -6,69 +6,53 @@ namespace Lab1
     {
         static void Main()
         {
-            // String inputs from user for the dates
+            // String inputs from user for the dates and the DateTime structure.
+
             string entryOne, entryTwo;
-
-
             DateTime dateOne, dateTwo;
-            /*
-#if DEBUG
-            dateOne = new DateTime(1990, 11, 23);
-            dateTwo = new DateTime(1990, 11, 22);
-#else
-*/
-            /*
 
-            // This is the beginning where people enter in the dates to find the difference
-            Console.WriteLine("Write dates in yyyy/mm/dd format.");
+            // as the structures currently have no value, they get sent down to a different function to obtain value.
+
+            Console.WriteLine("This program will calculate the difference in hours, minutes, and seconds between two dates that you enter.");
             Console.WriteLine("");
-            Console.WriteLine("Please enter date one.");
-
-            //This converts what the user inputs into the DateTime
-            entryOne = Console.ReadLine();
-            dateOne = DateTime.Parse(entryOne);
-
-
-            Console.WriteLine("Please enter date two.");
-            entryTwo = Console.ReadLine();
-            dateTwo = DateTime.Parse(entryTwo);
-            */
+            Console.WriteLine("Please enter the dates in dd/mm/yy");
 
             dateOne = GetDateInput();
             dateTwo = GetDateInput();
-
-//#endif
 
 
             Console.WriteLine("The first date is {0} ", dateOne);
             Console.WriteLine("The second date is {0} ", dateTwo);
 
-            // What I have is starting date and the ending date. 
-            // I need the time span between the two dates
+            // This portion of the code calculates the difference in the two dates that the user entered an assigns them to
+            // a new variable named timeDifference.
+
             var timeDifference = dateTwo - dateOne;
 
 
-            //-----------------------------------------
-
-            // 
-            // What I need is the hours, minutes, seconds between the two dates
+            // This portion writes timeDifference in hours, minutes, and seconds. It also is displayed in absolute values so 
+            // the hours, minutes, and seconds are not negative, as that isn't really possible.
 
             Console.WriteLine("The total hours between the dates are " + Math.Abs(timeDifference.TotalHours));
             Console.WriteLine("The total minutes between the dates are " + Math.Abs(timeDifference.TotalMinutes));
             Console.WriteLine("The total seconds between the dates are " + Math.Abs(timeDifference.TotalSeconds));
 
         }
+        // This function is called upon to give dateOne and dateTwo values entered in by the user.
 
         static DateTime GetDateInput()
         {
             string userInput;
             DateTime entryDate;
+            // Here it is requested by the user to enter in write a date for the program. It also checks to see if the user
+            // entered in a valid date. If the user did not enter in a valid date it asks the user to do so until they enter
+            // in a valid date.
 
             Console.WriteLine("Please enter a date.");
             userInput = Console.ReadLine();
             bool success = DateTime.TryParse(userInput, out entryDate);
 
-            if(success ==true)
+            if (success == true)
             {
                 return entryDate;
             }
