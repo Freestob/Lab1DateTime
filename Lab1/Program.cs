@@ -13,9 +13,9 @@ namespace Lab1
 
             // as the structures currently have no value, they get sent down to a different function to obtain value.
 
-            Console.WriteLine("This program will calculate the difference in hours, minutes, and seconds between two dates that you enter.");
+            Console.WriteLine("This program will calculate the difference in days, hours, and minutes between two dates that you enter.");
             Console.WriteLine("");
-            Console.WriteLine("Please enter the dates in dd/mm/yy");
+            
 
             dateOne = GetDateInput();
             dateTwo = GetDateInput();
@@ -30,12 +30,12 @@ namespace Lab1
             var timeDifference = dateTwo - dateOne;
 
 
-            // This portion writes timeDifference in hours, minutes, and seconds. It also is displayed in absolute values so 
+            // This portion writes timeDifference in days, hours, and minutes. It also is displayed in absolute values so 
             // the hours, minutes, and seconds are not negative, as that isn't really possible.
 
+            Console.WriteLine("The total days between the dates are " + Math.Abs(timeDifference.TotalDays));
             Console.WriteLine("The total hours between the dates are " + Math.Abs(timeDifference.TotalHours));
             Console.WriteLine("The total minutes between the dates are " + Math.Abs(timeDifference.TotalMinutes));
-            Console.WriteLine("The total seconds between the dates are " + Math.Abs(timeDifference.TotalSeconds));
 
         }
         // This function is called upon to give dateOne and dateTwo values entered in by the user.
@@ -48,7 +48,7 @@ namespace Lab1
             // entered in a valid date. If the user did not enter in a valid date it asks the user to do so until they enter
             // in a valid date.
 
-            Console.WriteLine("Please enter a date.");
+            Console.WriteLine("Please enter the dates in dd/mm/yy");
             userInput = Console.ReadLine();
             bool success = DateTime.TryParse(userInput, out entryDate);
 
