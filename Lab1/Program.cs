@@ -8,21 +8,16 @@ namespace Lab1
         {
             // String inputs from user for the dates and the DateTime structure.
 
-            string entryOne, entryTwo;
+            
             DateTime dateOne, dateTwo;
 
             // as the structures currently have no value, they get sent down to a different function to obtain value.
 
-            Console.WriteLine("This program will calculate the difference in days, hours, and minutes between two dates that you enter.");
-            Console.WriteLine("");
+            Console.WriteLine("This program will calculate the difference in days, hours, and minutes between two dates that you enter." + "\n");
             
 
             dateOne = GetDateInput();
             dateTwo = GetDateInput();
-
-
-            Console.WriteLine("The first date is {0} ", dateOne);
-            Console.WriteLine("The second date is {0} ", dateTwo);
 
             // This portion of the code calculates the difference in the two dates that the user entered an assigns them to
             // a new variable named timeDifference.
@@ -33,9 +28,9 @@ namespace Lab1
             // This portion writes timeDifference in days, hours, and minutes. It also is displayed in absolute values so 
             // the hours, minutes, and seconds are not negative, as that isn't really possible.
 
-            Console.WriteLine("The total days between the dates are " + Math.Abs(timeDifference.TotalDays));
-            Console.WriteLine("The total hours between the dates are " + Math.Abs(timeDifference.TotalHours));
-            Console.WriteLine("The total minutes between the dates are " + Math.Abs(timeDifference.TotalMinutes));
+            Console.WriteLine("\n" + "The total days between the dates are " + Math.Abs(timeDifference.TotalDays));
+            Console.WriteLine("\n" + "The total hours between the dates are " + Math.Abs(timeDifference.TotalHours));
+            Console.WriteLine("\n" + "The total minutes between the dates are " + Math.Abs(timeDifference.TotalMinutes));
 
         }
         // This function is called upon to give dateOne and dateTwo values entered in by the user.
@@ -48,7 +43,7 @@ namespace Lab1
             // entered in a valid date. If the user did not enter in a valid date it asks the user to do so until they enter
             // in a valid date.
 
-            Console.WriteLine("Please enter the dates in dd/mm/yy");
+            Console.WriteLine("\n" + "Please enter the dates in dd/mm/yyyy");
             userInput = Console.ReadLine();
             bool success = DateTime.TryParse(userInput, out entryDate);
 
@@ -58,7 +53,7 @@ namespace Lab1
             }
             else
             {
-                Console.WriteLine("Hey, write a valid date.");
+                Console.WriteLine("Please write a valid date." + "\n");
                 return GetDateInput();
             }
 
